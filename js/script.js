@@ -7,34 +7,34 @@
 
 // km request
 var kilometers = parseInt (prompt ("Quanti chilometri vuoi percorrere?"));
-document.getElementById("kilometers").innerHTML = kilometers;
+document.getElementById("kilometers").innerHTML = "Vuoi percorrere " + kilometers + " Km";
 console.log(kilometers);
 
 // age request
 var age = parseInt (prompt ("Quanti anni hai?"));
-document.getElementById("age").innerHTML = age;
+document.getElementById("age").innerHTML = "hai " + age + " anni";
 console.log(age);
 
 // ticket price - no discount - (km*0.21)
 var normalTicketPrice = (kilometers * 0.21).toFixed(2);
-document.getElementById("normal_price").innerHTML = normalTicketPrice;
-console.log("Il prezzo del biglietto è: " + normalTicketPrice + "€");
+document.getElementById("normal_price").innerHTML = "Il prezzo base del biglietto è: " + normalTicketPrice + "€";
+console.log("Il prezzo base del biglietto è: " + normalTicketPrice + " €");
 
 // discount
-var discount = 0
+var discount = 0;
 
 if (age < 18) {
     discount = ((normalTicketPrice / 100) *20).toFixed(2);
     document.getElementById("discount").innerHTML = "Siccome sei minorenne, hai diritto ad uno sconto del 20%, pari a " + discount + "€";
-    console.log ("Hai diritto ad uno sconto del 20%, pari a " + discount + "€");
+    console.log ("sconto del 20% " + discount + "€");
 } else if (age > 65) {
     discount = ((normalTicketPrice / 100) *40).toFixed(2);
     document.getElementById("discount").innerHTML = "Siccome sei un over 65, hai diritto ad uno sconto del 40%, pari a " + discount + "€";
-    console.log ("Hai diritto ad uno sconto del 40%, pari a " + discount + "€");
+    console.log ("sconto del 40% " + discount + "€");
 } else {
     discount = 0;
     document.getElementById("discount").innerHTML = "Non hai diritto ad alcun sconto :(";
-    console.log("Non hai diritto a nessuno sconto");
+    console.log("No sconto");
 }
 
 // ticket price with discount
